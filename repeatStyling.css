@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.sky{
+    width: 100vw;
+    height: 35vh;
+    background: lightblue
+}
+.grass{
+    width: 100vw;
+    height: 30vh;
+    background: seagreen;
+}
+.road{
+    width: 100vw;
+    height: 30vh;
+    background: rgb(65, 63, 63);
+    border-top: 5px solid gray;
+}
+.pop-up{
+    position: relative;
+    animation: popup 1s;
+    width: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: center;
+    margin: 0 auto;
+    height: 45px;
+    font-size: 20px;
+    color: white;
+    background: rgb(82, 97, 82);
+    border-radius: 100px;
+    top: 10px;
+}
+.lines{
+    height: o;
+    width: 100vw;
+    border: 5px dashed white;
+    position: absolute;
+    top: 85%;
+}
+.car{
+    position: absolute;
+    top: 390px;
+    animation: drive 10s both infinite,jump 1s both;
+    /* animation-duration: 3s;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite; */
+}
+.cloud{
+    position: absolute;
+}
+.cloud:nth-child(2){
+    left: 100px;
+    opacity: 0.8;
+    top: -50px;
+    animation: wind 50s linear infinite reverse;/*animation shorthand*/
+}
+.cloud:nth-child(1){
+    opacity: 0.8;
+    top: -20px;
+    animation-fill-mode: both;
+    animation: wind 80s linear infinite reverse;
+}
+@keyframes drive{
+    from{transform: translateX(-200px)}
+    to{transform: translateX(1400px)}
+}
+@keyframes wind {
+    from{left:-300px}
+    to{left:100%}
+}
+@keyframes jump{              /*jumping element*/
+    0%{top: 390px}
+    60%{top: 350px}
+    100%{top: 390px}
+}
+@keyframes popup {
+    0%{opacity: 0; top:-400px}
+    70%{top: -100px}
+    100%{top: 40px; opacity: 1}
+}
